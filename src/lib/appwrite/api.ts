@@ -5,8 +5,6 @@ import { account } from "./config";
 
 
 export async function createUserAccount(user: INewUser) {
-    console.log(user);
-    
     try {
         const newAccount = await account.create(
             ID.unique(),
@@ -15,6 +13,7 @@ export async function createUserAccount(user: INewUser) {
             user.name,
         )
         return newAccount;
+        
     } catch (error) {
         console.log(error);
         return error;
